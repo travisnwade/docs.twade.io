@@ -20,15 +20,15 @@ markdown.extensions.pymdownx.blocks.details:
 nav:
   - Docs:
     - Home: index.md
-    - Netlify: Netlify/index.md
-    - Windows: Windows/index.md
-    - Powershell: Powershell/index.md
-    - Ansible: Ansible/index.md
+    - Netlify: netlify/index.md
+    - Windows: windows/index.md
+    - Powershell: powershell/index.md
+    - Ansible: ansible/index.md
     - About: about.md
   - Tools:
     - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
     - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/" target="_blank
-    - Downloads: Downloads/index.md
+    - Downloads: downloads/index.md
   - Awesome Extras:
     - 'Awesome Self Hosted': https://github.com/awesome-selfhosted/awesome-selfhosted#table-of-contents" target="_blank
   - More About Travis:

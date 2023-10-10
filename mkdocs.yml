@@ -13,6 +13,8 @@ nav:
     - 'LinkedIn': https://www.linkedin.com/in/traviswade/
     - 'Instagram': https://www.instagram.com/tn_wade/
     - 'Links Page': https://links.twade.io  
+  - Tools:
+    - 'Online Markdown Editor': https://markdown.twade.io/
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
 copyright: © 2023 Travis Wade

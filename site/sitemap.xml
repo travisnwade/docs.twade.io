@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.twade.io/Downloads/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.twade.io/Netlify/</loc>
          <lastmod>2023-10-10</lastmod>
          <changefreq>daily</changefreq>

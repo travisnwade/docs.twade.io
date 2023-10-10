@@ -14,8 +14,8 @@ nav:
     - 'Instagram': https://www.instagram.com/tn_wade/
     - 'Links Page': https://links.twade.io  
   - Tools:
-    - 'Online Markdown Editor': https://markdown.twade.io/
-    - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/
+    - Markdown: Markdown/index.md
+    - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/    
     - Downloads: Downloads/index.md
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade

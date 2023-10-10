@@ -9,3 +9,12 @@
 .caption-text {
     color: #606a69;
 }
+
+details {
+    border-radius: 10px;
+}
+
+summary {
+    font-weight: 700;
+    cursor: pointer;
+}

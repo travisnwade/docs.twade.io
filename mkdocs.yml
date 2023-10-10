@@ -3,22 +3,34 @@ site_url: https://docs.twade.io
 theme: readthedocs
 markdown_extensions:
   - footnotes
+  - toc
+  - pymdownx.blocks.details
+markdown.extensions.toc:
+  - permalink: true
+  - anchorlink: true
+markdown.extensions.pymdownx.blocks.details:
+  - types:
+    - details-note
+    - details-warning
 nav:
-  - Home: index.md
-  - Netlify: Netlify/index.md
-  - Windows: Windows/index.md
-  - Powershell: Powershell/index.md
-  - Ansible: Ansible/index.md
-  - About: about.md
-  - More About Travis:
-    - 'Github': https://github.com/travisnwade
-    - 'LinkedIn': https://www.linkedin.com/in/traviswade/
-    - 'Instagram': https://www.instagram.com/tn_wade/
-    - 'Links Page': https://links.twade.io  
+  - Docs:
+    - Home: index.md
+    - Netlify: Netlify/index.md
+    - Windows: Windows/index.md
+    - Powershell: Powershell/index.md
+    - Ansible: Ansible/index.md
+    - About: about.md
   - Tools:
-    - Markdown: Markdown/index.md
-    - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/    
+    - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
+    - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/" target="_blank
     - Downloads: Downloads/index.md
+  - Awesome Extras:
+    - 'Awesome Self Hosted': https://github.com/awesome-selfhosted/awesome-selfhosted#table-of-contents" target="_blank
+  - More About Travis:
+    - 'Github': https://github.com/travisnwade" target="_blank
+    - 'LinkedIn': https://www.linkedin.com/in/traviswade/" target="_blank
+    - 'Instagram': https://www.instagram.com/tn_wade/" target="_blank
+    - 'Links Page': https://links.twade.io  " target="_blank    
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
 copyright: © 2023 Travis Wade

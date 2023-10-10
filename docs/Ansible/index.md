@@ -61,5 +61,3 @@ winrm set winrm/config/client '@{AllowUnencrypted="false"}'
 # Enable CredSSP
 Enable-WSManCredSSP -Role Server -Force
 ```
-
-## Section 3

@@ -1,6 +1,8 @@
 site_name: Travis Wade Wiki
 site_url: https://docs.twade.io
 theme: readthedocs
+markdown_extensions:
+  - footnotes
 nav:
   - Home: index.md
   - Netlify: Netlify/index.md

@@ -20,5 +20,10 @@ Here are a few of my projects that are hosted on Netlify:
 9. Fabric me this.  My wife's link page (using the same open source one I mentioned in bullet 2 above) with a fully functional contact form: [fabricmethis.com](https://www.fabricmethis.com/)
 10. A super simple kids schedule. Not the most perfect, but looks nice on a TV in a common room that the children can reference for their daily schedule: [kids.tandj.io](https://kids.tandj.io/)
 
+![Netlify](../img/netlify-projects.png "Netlify Projects")
 
 ## Getting started on Netlify
+
+### Supported Git Providers
+
+![Netlify](../img/netlify-git-providers.png "Netlify Git Providers")

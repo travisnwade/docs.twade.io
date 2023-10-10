@@ -15,6 +15,6 @@ nav:
     - 'Links Page': https://links.twade.io  
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
-copyright: 2023 Travis Wade
+copyright: © 2023 Travis Wade
 extra_css:
   - css/custom.css

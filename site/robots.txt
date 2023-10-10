@@ -10,4 +10,4 @@ User-agent: yeti
 Disallow: /
 User-agent: *
 Disallow: 
-Sitemap: https://go.twade.io/sitemap.xml
+Sitemap: https://docs.twade.io/sitemap.xml

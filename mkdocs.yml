@@ -3,8 +3,16 @@ site_url: https://docs.twade.io
 theme: readthedocs
 nav:
   - Home: index.md
+  - Netlify: Netlify/index.md
+  - Windows: Windows/index.md
+  - Powershell: Powershell/index.md
+  - Ansible: Ansible/index.md
   - About: about.md
-  - 'Github': https://github.com/travisnwade
+  - More About Travis:
+    - 'Github': https://github.com/travisnwade
+    - 'LinkedIn': https://www.linkedin.com/in/traviswade/
+    - 'Instagram': https://www.instagram.com/tn_wade/
+    - 'Links Page': https://links.twade.io  
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
 copyright: 2023 Travis Wade

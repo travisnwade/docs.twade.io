@@ -10,4 +10,24 @@
          <lastmod>2023-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://docs.twade.io/Ansible/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.twade.io/Netlify/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.twade.io/Powershell/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.twade.io/Windows/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

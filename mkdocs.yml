@@ -2,5 +2,11 @@ site_name: Travis Wade Wiki
 site_url: https://docs.twade.io
 theme: readthedocs
 nav:
- - Home: index.md
- - About: about.md
+  - Home: index.md
+  - About: about.md
+  - 'Github': https://github.com/travisnwade
+site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
+site_author: Travis Wade
+copyright: 2023 Travis Wade
+extra_css:
+  - css/custom.css

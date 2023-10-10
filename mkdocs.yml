@@ -1,3 +1,4 @@
-site_name: My Docs
+site_name: Travis Wade Wiki
+site_url: https://docs.twade.io
 theme:
   name: 'rtd-dropdown'

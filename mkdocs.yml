@@ -3,8 +3,13 @@ site_url: https://docs.twade.io
 theme: readthedocs
 markdown_extensions:
   - footnotes
-  - toc
+  - toc:
+      permalink: 
   - pymdownx.blocks.details
+  - attr_list
+  - def_list
+  - pymdownx.snippets
+  - pymdownx.superfences  
 markdown.extensions.toc:
   - permalink: true
   - anchorlink: true
@@ -33,6 +38,6 @@ nav:
     - 'Links Page': https://links.twade.io  " target="_blank    
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
-copyright: © 2023 Travis Wade
+copyright: © 2023 <a href="https://links.twade.io" target="_blank">Travis Wade</a>
 extra_css:
   - css/custom.css

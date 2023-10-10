@@ -114,26 +114,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="ansible">Ansible</h1>
+                <h1 id="ansible">Ansible<a class="headerlink" href="#ansible" title="Permanent link"></a></h1>
 <p><em>Disclaimer</em>: This is not an all inclusive guide but more of a good starting point.  I'd recommend you research and learn some on your own as much as you can.
 Some of these are geared towards Windows, but I'll do my best to discern between the environments whenever possible.</p>
-<h2 id="install-ansible">Install Ansible</h2>
+<h2 id="install-ansible">Install Ansible<a class="headerlink" href="#install-ansible" title="Permanent link"></a></h2>
 <p><em>Disclaimer</em>: Because I'm stubborn, and primarily a Windows Systems Admin, much of this environment is performed from a Windows machine. That said, I <em>run</em> Ansible scripts from a Linux subsystem in Windows.  See <a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#2-install-wsl">getting Ubuntu for WSL</a> for more information.</p>
-<h3 id="deployment-machine-ansible-host">Deployment machine (Ansible Host)</h3>
+<h3 id="deployment-machine-ansible-host">Deployment machine (Ansible Host)<a class="headerlink" href="#deployment-machine-ansible-host" title="Permanent link"></a></h3>
 <p>First, get Ansible installed.</p>
-<pre><code>sudo apt-add-repository ppa:ansible/ansible
+<div class="highlight"><pre><span></span><code>sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
 sudo apt install ansible
-</code></pre>
+</code></pre></div>
 <p>These are needed for using Ansible to configure Windows hosts.</p>
-<pre><code>ansible-galaxy collection install ansible.windows
+<div class="highlight"><pre><span></span><code>ansible-galaxy collection install ansible.windows
 ansible-galaxy collection install chocolatey.chocolatey
 apt-get install python3-pip
 pip install pywinrm[credssp]
-</code></pre>
-<h2 id="on-target-windows-hosts">On Target Windows Hosts</h2>
+</code></pre></div>
+<h2 id="on-target-windows-hosts">On Target Windows Hosts<a class="headerlink" href="#on-target-windows-hosts" title="Permanent link"></a></h2>
 <p>Windows needs a bit of setup before it's Ansible friendly.</p>
-<pre><code># Collect some information and generate self-signed cert on host
+<div class="highlight"><pre><span></span><code># Collect some information and generate self-signed cert on host
 
 $hostName = $env:COMPUTERNAME
 $hostIP=(Get-NetAdapter| Get-NetIPAddress).IPv4Address|Out-String
@@ -143,26 +143,26 @@ $srvCert
 # Clean up existing WinRM listeners and create new HTTPS WinRM listener with new cert
 
 Get-ChildItem wsman:\localhost\Listener
-Get-ChildItem wsman:\localhost\Listener\ | Where-Object -Property Keys -like 'Transport=HTTP*' | Remove-Item -Recurse
+Get-ChildItem wsman:\localhost\Listener\ | Where-Object -Property Keys -like &#39;Transport=HTTP*&#39; | Remove-Item -Recurse
 New-Item -Path WSMan:\localhost\Listener\ -Transport HTTPS -Address * -CertificateThumbPrint $srvCert.Thumbprint -Force
 
 # Create new FW rules
 
-New-NetFirewallRule -Displayname 'WinRM - Powershell remoting HTTPS-In' -Name 'WinRM - Powershell remoting HTTPS-In' -Profile Any -LocalPort 5986 -Protocol TCP
+New-NetFirewallRule -Displayname &#39;WinRM - Powershell remoting HTTPS-In&#39; -Name &#39;WinRM - Powershell remoting HTTPS-In&#39; -Profile Any -LocalPort 5986 -Protocol TCP
 
 # Restart WinRM Service
 
 Restart-Service WinRM
 
 # Create and export certificates
-New-Item -Path 'C:\Certificates\' -ItemType Directory
+New-Item -Path &#39;C:\Certificates\&#39; -ItemType Directory
 Export-Certificate -Cert $srvCert -FilePath C:\Certificates\SSL_PS_Remoting.cer
-winrm set winrm/config/service '@{AllowUnencrypted=&quot;false&quot;}'
-winrm set winrm/config/client '@{AllowUnencrypted=&quot;false&quot;}'
+winrm set winrm/config/service &#39;@{AllowUnencrypted=&quot;false&quot;}&#39;
+winrm set winrm/config/client &#39;@{AllowUnencrypted=&quot;false&quot;}&#39;
 
 # Enable CredSSP
 Enable-WSManCredSSP -Role Server -Force
-</code></pre>
+</code></pre></div>
               
             </div>
           </div><footer>
@@ -175,7 +175,7 @@ Enable-WSManCredSSP -Role Server -Force
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© 2023 Travis Wade</p>
+      <p>© 2023 <a href="https://links.twade.io" target="_blank">Travis Wade</a></p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

@@ -59,9 +59,13 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Ansible</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#section-1">Section 1</a>
+    <li class="toctree-l2"><a class="reference internal" href="#install-ansible">Install Ansible</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment-machine-ansible-host">Deployment machine (Ansible Host)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-2">Section 2</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#on-target-windows-hosts">On Target Windows Hosts</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#section-3">Section 3</a>
     </li>
@@ -116,9 +120,54 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="ansible">Ansible</h1>
-<p>Some boiler plate text.</p>
-<h2 id="section-1">Section 1</h2>
-<h2 id="section-2">Section 2</h2>
+<p><em>Disclaimer</em>: This is not an all inclusive guide but more of a good starting point.  I'd recommend you research and learn some on your own as much as you can.
+Some of these are geared towards Windows, but I'll do my best to discern between the environments whenever possible.</p>
+<h2 id="install-ansible">Install Ansible</h2>
+<p><em>Disclaimer</em>: Because I'm stubborn, and primarily a Windows Systems Admin, much of this environment is performed from a Windows machine. That said, I <em>run</em> Ansible scripts from a Linux subsystem in Windows.  See <a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#2-install-wsl">getting Ubuntu for WSL</a> for more information.</p>
+<h3 id="deployment-machine-ansible-host">Deployment machine (Ansible Host)</h3>
+<p>First, get Ansible installed.</p>
+<pre><code>sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
+</code></pre>
+<p>These are needed for using Ansible to configure Windows hosts.</p>
+<pre><code>ansible-galaxy collection install ansible.windows
+ansible-galaxy collection install chocolatey.chocolatey
+apt-get install python3-pip
+pip install pywinrm[credssp]
+</code></pre>
+<h2 id="on-target-windows-hosts">On Target Windows Hosts</h2>
+<p>Windows needs a bit of setup before it's Ansible friendly.</p>
+<pre><code># Collect some information and generate self-signed cert on host
+
+$hostName = $env:COMPUTERNAME
+$hostIP=(Get-NetAdapter| Get-NetIPAddress).IPv4Address|Out-String
+$srvCert = New-SelfSignedCertificate -DnsName $hostName,$hostIP -CertStoreLocation Cert:\LocalMachine\My
+$srvCert
+
+# Clean up existing WinRM listeners and create new HTTPS WinRM listener with new cert
+
+Get-ChildItem wsman:\localhost\Listener
+Get-ChildItem wsman:\localhost\Listener\ | Where-Object -Property Keys -like 'Transport=HTTP*' | Remove-Item -Recurse
+New-Item -Path WSMan:\localhost\Listener\ -Transport HTTPS -Address * -CertificateThumbPrint $srvCert.Thumbprint -Force
+
+# Create new FW rules
+
+New-NetFirewallRule -Displayname 'WinRM - Powershell remoting HTTPS-In' -Name 'WinRM - Powershell remoting HTTPS-In' -Profile Any -LocalPort 5986 -Protocol TCP
+
+# Restart WinRM Service
+
+Restart-Service WinRM
+
+# Create and export certificates
+New-Item -Path 'C:\Certificates\' -ItemType Directory
+Export-Certificate -Cert $srvCert -FilePath C:\Certificates\SSL_PS_Remoting.cer
+winrm set winrm/config/service '@{AllowUnencrypted=&quot;false&quot;}'
+winrm set winrm/config/client '@{AllowUnencrypted=&quot;false&quot;}'
+
+# Enable CredSSP
+Enable-WSManCredSSP -Role Server -Force
+</code></pre>
 <h2 id="section-3">Section 3</h2>
               
             </div>

@@ -15,8 +15,11 @@ markdown_extensions:
   - pymdownx.details  
   - attr_list
   - def_list
-  - meta
-  - admonition  
+  - fenced_code
+  - admonition 
+plugins:
+  - search
+  - mkdocs-pdf
 nav:
   - Docs:
     - Home: index.md

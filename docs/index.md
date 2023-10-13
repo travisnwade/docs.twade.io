@@ -1,17 +1,16 @@
 # Travis Wade Documentation Wiki
 
 ## How this site got started
+
+Basically, I was just fucking around.  I wanted a quick and easy Wiki style site that I could use as a personal reference to
+common tasks I do or things that took me a bit of troubleshooting to figure it out. Then I wanted to document it.
+
+I also didn't want to spend much money on it.  (Free if possible).  And I found MKDocs. Needs a bit of setup locally,
+but essently write your docs in markdown, then run a simple `mkdocs build` command to compile static HTML into a `site` directory
+which can then be published directly to Netlify's CDN.  Free, easy SSL, and minimal overhead.  All of which I fucking love.
+
 ### MKDocs
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-### Footnotes
-
-This is an example of a footnote[^1] 
-
-[^1]: 
-    This is the description of the footnote itself. 
-    Which should render at the bottom of the page. 
-    For more reading, read here: [python-markdown-extension-footnotes](https://python-markdown.github.io/extensions/footnotes/)
 
 ## Where I host this
 ### Netlify

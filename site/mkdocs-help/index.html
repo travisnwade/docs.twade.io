@@ -44,8 +44,28 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../netlify/">Netlify</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../windows/">Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../powershell/">Powershell</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">MKDocs Help</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#mkdocsyml-example">mkdocs.yml Example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#opening-links-in-new-tab">Opening Links in New Tab</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#automatically-open-external-links-in-a-new-tab">Automatically open external links in a new tab</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#opening-nav-link-in-new-tab">Opening Nav link in new tab</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#footnotes">Footnotes</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#buttons">Buttons</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#primary-buttons">Primary Buttons</a>
@@ -64,15 +84,17 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fenced-code">Fenced Code</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#html">HTML</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#powershell">PowerShell</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#embedding-pdfs">Embedding PDFs</a>
+    </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../netlify/">Netlify</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../windows/">Windows</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../powershell/">Powershell</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../ansible/">Ansible</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
                   </li>
@@ -126,7 +148,87 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="help-for-mkdocs">Help for MKDocs</h1>
+                <div><h1 id="help-for-mkdocs">Help for MKDocs</h1>
+<h2 id="mkdocsyml-example">mkdocs.yml Example</h2>
+<p>This is an example of my current <code>mkdocs.yml</code> file for this site:</p>
+<div class="highlight"><pre><span></span><code>site_name: Travis Wade Wiki
+site_url: https://docs.twade.io
+site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
+site_author: Travis Wade
+copyright: © 2023 &lt;a href="https://links.twade.io" target="_blank"&gt;Travis Wade&lt;/a&gt;
+extra_css:
+- css/custom.css
+extra_javascript:
+- js/custom.js  
+theme: readthedocs
+markdown_extensions:
+- footnotes
+- pymdownx.critic  
+- pymdownx.superfences 
+- pymdownx.details  
+- attr_list
+- def_list
+- fenced_code
+- meta
+- admonition  
+nav:
+- Docs:
+    - Home: index.md
+    - Netlify: netlify/index.md
+    - Windows: windows/index.md
+    - Powershell: powershell/index.md
+    - Ansible: ansible/index.md
+    - MKDocs Help: mkdocs-help/index.md    
+    - About: about.md
+- Tools:
+    - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
+    - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/" target="_blank
+    - Downloads: downloads/index.md
+- Awesome Extras:
+    - 'Awesome Self Hosted': https://github.com/awesome-selfhosted/awesome-selfhosted#table-of-contents" target="_blank
+- More About Travis:
+    - 'Github': https://github.com/travisnwade" target="_blank
+    - 'LinkedIn': https://www.linkedin.com/in/traviswade/" target="_blank
+    - 'Instagram': https://www.instagram.com/tn_wade/" target="_blank
+    - 'Links Page': https://links.twade.io  " target="_blank   
+</code></pre></div>
+<h2 id="opening-links-in-new-tab">Opening Links in New Tab</h2>
+<h3 id="automatically-open-external-links-in-a-new-tab">Automatically open external links in a new tab</h3>
+<p>This one requires you to create a new folder and new <code>.js</code> file. As well as a slight modification to your <code>mkdocs.yml</code> file.</p>
+<p>First, the new <code>.js</code> file.  You can name it whatever you like, I just named mine <code>custom.js</code>.</p>
+<p>Place the following line of code as the content of your new <code>.js</code> file that will handle this action:</p>
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="kd">function</span><span class="p">(){</span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">e</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">"a"</span><span class="p">),</span><span class="nx">t</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="nx">n</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="nx">n</span><span class="o">&lt;</span><span class="nx">t</span><span class="p">;</span><span class="nx">n</span><span class="o">++</span><span class="p">)</span><span class="ow">new</span><span class="w"> </span><span class="nx">URL</span><span class="p">(</span><span class="nx">e</span><span class="p">[</span><span class="nx">n</span><span class="p">].</span><span class="nx">href</span><span class="p">).</span><span class="nx">origin</span><span class="o">!==</span><span class="nx">location</span><span class="p">.</span><span class="nx">origin</span><span class="o">&amp;&amp;</span><span class="nx">e</span><span class="p">[</span><span class="nx">n</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"target"</span><span class="p">,</span><span class="s2">"_blank"</span><span class="p">)}();</span>
+</code></pre></div>
+<p>I placed this in a new folder under the <code>docs</code> directory.  Like such:</p>
+<pre><code>docs
+-- js
+    -- custom.js
+</code></pre>
+<p>And in my <code>mkdocs.yml</code> file:</p>
+<pre><code>extra_javascript:
+- js/custom.js
+</code></pre>
+<h3 id="opening-nav-link-in-new-tab">Opening Nav link in new tab</h3>
+<p>You can reference my <code>mkdocs.yml</code> file above for how I achieve this, but here is some sample code to show how I'm doing it:</p>
+<pre><code>nav:
+- MENU ITEM:
+    - 'Name of the Menu item': https://links.twade.io " target="_blank
+</code></pre>
+<p>Stripped down version of my nav on this site that shows how I added my <code>github</code> profile in the nav so it opens in a new window:</p>
+<pre><code>nav:
+- More About Travis:
+    - 'Github': https://github.com/travisnwade" target="_blank
+</code></pre>
+<h2 id="footnotes">Footnotes</h2>
+<p>This is an example of a footnote<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </p>
+<p>Here's how the footnote is written in Markdown:</p>
+<div class="highlight"><pre><span></span><code>This is an example of a footnote[^1] 
+
+[<span class="nl">^1</span>]: 
+    <span class="na">This is the description of the footnote itself. </span>
+    Which should render at the bottom of the page. 
+    For more reading, read here: [<span class="nt">python-markdown-extension-footnotes</span>](<span class="na">https://python-markdown.github.io/extensions/footnotes/</span>)
+</code></pre></div>
 <h2 id="buttons">Buttons</h2>
 <h3 id="primary-buttons">Primary Buttons</h3>
 <p><a class="md-button md-button--primary" href="#">Subscribe to our newsletter</a></p>
@@ -242,13 +344,49 @@ within the note.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p>
 </div>
 <h3 id="further-reading-on-admonitions">Further reading on Admonitions</h3>
-<p>For more reading, checkout Squidfunk's docs on this usage here: <a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage">squidfuck.github.io</a>        </p>
+<p>For more reading, checkout Squidfunk's docs on this usage here: <a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage">squidfunk.github.io</a>        </p>
+<h2 id="fenced-code">Fenced Code</h2>
+<p>This is especially handy when you want the correct syntax when highlighting code.</p>
+<h3 id="html">HTML</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>A link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Should render as html code here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<pre><code>``` { .html }
+&lt;a href="#"&gt;A link&lt;/a&gt;
+&lt;p&gt;Should render as html code here.&lt;/p&gt;
+```
+</code></pre>
+<h3 id="powershell">PowerShell</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">Win32_OperatingSystem</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">Shutdown</span>
+</code></pre></div>
+<pre><code>``` { .powershell }
+Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
+</code></pre>
+<h2 id="embedding-pdfs">Embedding PDFs</h2>
+<p>Embedding PDF's can be useful as all hell. You'll need to do a few things first.
+I followed this documentation to get this done: <a href="https://pypi.org/project/mkdocs-pdf/">pypi.org/project/mkdocs-pdf</a></p>
+<p><embed alt="Lorem Ipsum Alt Text" src="../pdf/Lorem-Ipsum.pdf" style="min-height:35vh;width:100%" type="application/pdf"></embed></p>
+<p>You'll need to store the document relative to the page. In my case, I have a folder called <code>pdf</code> where I'll store
+all of my pdf files, which I can then reference later in other pages:</p>
+<pre><code>![Lorem Ipsum Alt Text](../pdf/Lorem-Ipsum.pdf){ type=application/pdf style="min-height:35vh;width:100%" }
+</code></pre>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>This is the description of the footnote itself. 
+Which should render at the bottom of the page. 
+For more reading, read here: <a href="https://python-markdown.github.io/extensions/footnotes/">python-markdown-extension-footnotes</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../netlify/" class="btn btn-neutral float-right" title="Netlify">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ansible/" class="btn btn-neutral float-left" title="Ansible"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -272,10 +410,10 @@ within the note.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../ansible/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../netlify/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

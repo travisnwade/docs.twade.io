@@ -1,5 +1,6 @@
-title: About the Travis Wade Docs
-description: This is mostly something I use as a personal reference to technical tasks I do that I can refer to later. It was also an exercise for building a flat-file Wiki site. Enjoy!
+---
+summary: This documentation Wiki is a flat file, source controlled resource that's deployed with Netlify. Basically, it's badass man.
+---
 
 # About these docs
 

@@ -1,22 +1,22 @@
 site_name: Travis Wade Wiki
 site_url: https://docs.twade.io
+site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
+site_author: Travis Wade
+copyright: © 2023 <a href="https://links.twade.io" target="_blank">Travis Wade</a>
+extra_css:
+  - css/custom.css
+extra_javascript:
+  - js/custom.js  
 theme: readthedocs
 markdown_extensions:
   - footnotes
-  - toc:
-      permalink: 
-  - pymdownx.blocks.details
+  - pymdownx.critic  
+  - pymdownx.superfences 
+  - pymdownx.details  
   - attr_list
   - def_list
-  - pymdownx.snippets
-  - pymdownx.superfences  
-markdown.extensions.toc:
-  - permalink: true
-  - anchorlink: true
-markdown.extensions.pymdownx.blocks.details:
-  - types:
-    - details-note
-    - details-warning
+  - meta
+  - admonition  
 nav:
   - Docs:
     - Home: index.md
@@ -24,6 +24,7 @@ nav:
     - Windows: windows/index.md
     - Powershell: powershell/index.md
     - Ansible: ansible/index.md
+    - MKDocs Help: mkdocs-help/index.md    
     - About: about.md
   - Tools:
     - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
@@ -36,8 +37,3 @@ nav:
     - 'LinkedIn': https://www.linkedin.com/in/traviswade/" target="_blank
     - 'Instagram': https://www.instagram.com/tn_wade/" target="_blank
     - 'Links Page': https://links.twade.io  " target="_blank    
-site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
-site_author: Travis Wade
-copyright: © 2023 <a href="https://links.twade.io" target="_blank">Travis Wade</a>
-extra_css:
-  - css/custom.css

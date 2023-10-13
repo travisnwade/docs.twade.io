@@ -10,11 +10,42 @@
     color: #606a69;
 }
 
-details {
-    border-radius: 10px;
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;    
 }
 
-summary {
-    font-weight: 700;
-    cursor: pointer;
+pre {
+    padding: 0px !important;
 }
+
+.md-button {
+    padding: 15px;
+    margin: 6px 8px 6px 8px;
+    min-width: 88px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: #404040;
+    color: #fff;
+  }
+
+  .md-button--primary {
+    padding: 12px;
+    margin: 6px 8px 6px 8px;
+    min-width: 88px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: #606a69;
+    color: #fff
+  }  

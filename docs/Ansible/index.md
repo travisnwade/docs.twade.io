@@ -11,53 +11,52 @@ _Disclaimer_: Because I'm stubborn, and primarily a Windows Systems Admin, much 
 
 First, get Ansible installed.
 
-```
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt update
-sudo apt install ansible
-```
+
+    sudo apt-add-repository ppa:ansible/ansible
+    sudo apt update
+    sudo apt install ansible
+
 
 These are needed for using Ansible to configure Windows hosts.
 
-```
-ansible-galaxy collection install ansible.windows
-ansible-galaxy collection install chocolatey.chocolatey
-apt-get install python3-pip
-pip install pywinrm[credssp]
-```
+
+    ansible-galaxy collection install ansible.windows
+    ansible-galaxy collection install chocolatey.chocolatey
+    apt-get install python3-pip
+    pip install pywinrm[credssp]
+
 
 ## On Target Windows Hosts
 
 Windows needs a bit of setup before it's Ansible friendly.
 
-```
-# Collect some information and generate self-signed cert on host
 
-$hostName = $env:COMPUTERNAME
-$hostIP=(Get-NetAdapter| Get-NetIPAddress).IPv4Address|Out-String
-$srvCert = New-SelfSignedCertificate -DnsName $hostName,$hostIP -CertStoreLocation Cert:\LocalMachine\My
-$srvCert
+    # Collect some information and generate self-signed cert on host
 
-# Clean up existing WinRM listeners and create new HTTPS WinRM listener with new cert
+    $hostName = $env:COMPUTERNAME
+    $hostIP=(Get-NetAdapter| Get-NetIPAddress).IPv4Address|Out-String
+    $srvCert = New-SelfSignedCertificate -DnsName $hostName,$hostIP -CertStoreLocation Cert:\LocalMachine\My
+    $srvCert
 
-Get-ChildItem wsman:\localhost\Listener
-Get-ChildItem wsman:\localhost\Listener\ | Where-Object -Property Keys -like 'Transport=HTTP*' | Remove-Item -Recurse
-New-Item -Path WSMan:\localhost\Listener\ -Transport HTTPS -Address * -CertificateThumbPrint $srvCert.Thumbprint -Force
+    # Clean up existing WinRM listeners and create new HTTPS WinRM listener with new cert
 
-# Create new FW rules
+    Get-ChildItem wsman:\localhost\Listener
+    Get-ChildItem wsman:\localhost\Listener\ | Where-Object -Property Keys -like 'Transport=HTTP*' | Remove-Item -Recurse
+    New-Item -Path WSMan:\localhost\Listener\ -Transport HTTPS -Address * -CertificateThumbPrint $srvCert.Thumbprint -Force
 
-New-NetFirewallRule -Displayname 'WinRM - Powershell remoting HTTPS-In' -Name 'WinRM - Powershell remoting HTTPS-In' -Profile Any -LocalPort 5986 -Protocol TCP
+    # Create new FW rules
 
-# Restart WinRM Service
+    New-NetFirewallRule -Displayname 'WinRM - Powershell remoting HTTPS-In' -Name 'WinRM - Powershell remoting HTTPS-In' -Profile Any -LocalPort 5986 -Protocol TCP
 
-Restart-Service WinRM
+    # Restart WinRM Service
 
-# Create and export certificates
-New-Item -Path 'C:\Certificates\' -ItemType Directory
-Export-Certificate -Cert $srvCert -FilePath C:\Certificates\SSL_PS_Remoting.cer
-winrm set winrm/config/service '@{AllowUnencrypted="false"}'
-winrm set winrm/config/client '@{AllowUnencrypted="false"}'
+    Restart-Service WinRM
 
-# Enable CredSSP
-Enable-WSManCredSSP -Role Server -Force
-```
+    # Create and export certificates
+    New-Item -Path 'C:\Certificates\' -ItemType Directory
+    Export-Certificate -Cert $srvCert -FilePath C:\Certificates\SSL_PS_Remoting.cer
+    winrm set winrm/config/service '@{AllowUnencrypted="false"}'
+    winrm set winrm/config/client '@{AllowUnencrypted="false"}'
+
+    # Enable CredSSP
+    Enable-WSManCredSSP -Role Server -Force

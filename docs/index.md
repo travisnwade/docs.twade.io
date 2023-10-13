@@ -35,39 +35,7 @@ There's no database to manage, just simple, flat files that I can write content 
         ...       # Other markdown pages, images and other files.
 
 ### A code block
-```
-A whole bunch of lines
-of code that should automatically
-be rendered correctly
-```
 
-### Details
-
-#### Warning
-
-/// details | A Warning Title
-    type: warning
-This is a warning message
-///
-
-The above was achieved with this code:
-```
-/// details | A Warning Title
-    type: warning
-This is a warning message
-///
-```
-#### Notes
-
-/// details | A Notes Title
-    type: note
-This is a notes message
-///
-
-The above was achieved with this code:
-```
-/// details | A Notes Title
-    type: note
-This is a notes message
-///
-```
+    A whole bunch of lines
+    of code that should automatically
+    be rendered correctly

@@ -12,7 +12,7 @@ markdown_extensions:
   - footnotes
   - pymdownx.critic  
   - pymdownx.superfences 
-  - pymdownx.details  
+  #- pymdownx.details  
   - attr_list
   - def_list
   - fenced_code

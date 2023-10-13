@@ -17,9 +17,6 @@ markdown_extensions:
   - def_list
   - fenced_code
   - admonition 
-plugins:
-  - search
-  - mkdocs-pdf
 nav:
   - Docs:
     - Home: index.md

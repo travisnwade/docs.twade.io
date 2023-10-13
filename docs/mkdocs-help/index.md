@@ -256,14 +256,6 @@ Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName 
     Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
     ```
 
-## Embedding PDFs
+## Building
 
-Embedding PDF's can be useful as all hell. You'll need to do a few things first.
-I followed this documentation to get this done: [pypi.org/project/mkdocs-pdf](https://pypi.org/project/mkdocs-pdf/)
-
-![Lorem Ipsum Alt Text](../pdf/Lorem-Ipsum.pdf){ type=application/pdf style="min-height:35vh;width:100%" }
-
-You'll need to store the document relative to the page. In my case, I have a folder called `pdf` where I'll store
-all of my pdf files, which I can then reference later in other pages:
-
-    ![Lorem Ipsum Alt Text](../pdf/Lorem-Ipsum.pdf){ type=application/pdf style="min-height:35vh;width:100%" }
+    mkdocs build

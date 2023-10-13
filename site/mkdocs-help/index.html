@@ -92,8 +92,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#embedding-pdfs">Embedding PDFs</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
@@ -362,14 +360,6 @@ within the note.</p>
 <pre><code>``` { .powershell }
 Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
 ```
-</code></pre>
-<h2 id="embedding-pdfs">Embedding PDFs</h2>
-<p>Embedding PDF's can be useful as all hell. You'll need to do a few things first.
-I followed this documentation to get this done: <a href="https://pypi.org/project/mkdocs-pdf/">pypi.org/project/mkdocs-pdf</a></p>
-<p><embed alt="Lorem Ipsum Alt Text" src="../pdf/Lorem-Ipsum.pdf" style="min-height:35vh;width:100%" type="application/pdf"></embed></p>
-<p>You'll need to store the document relative to the page. In my case, I have a folder called <code>pdf</code> where I'll store
-all of my pdf files, which I can then reference later in other pages:</p>
-<pre><code>![Lorem Ipsum Alt Text](../pdf/Lorem-Ipsum.pdf){ type=application/pdf style="min-height:35vh;width:100%" }
 </code></pre>
 <div class="footnote">
 <hr>

@@ -1,10 +1,12 @@
 # About Netlify
 
-Netlify is a kickass development tool.
+Netlify is a kickass development tool and static file hosting service.  You can get started for free and you get a lot of features with it.
 
-Essentially, it can take your existing repositories (I use Github for my personal projects), and can deploy, run builds and more.
+Essentially, it can take your existing repositories (I use Github for my personal projects), and can deploy, run builds and more. (such as `npm run build` and more during deployment
+)
 Which is all then served from their global CDN which is fast as hell!
-And all I have to do is commit and push my code to the repo.  Netlify then deploys it.
+
+And all I have to do is commit and push my code to the repo.  Netlify then deploys it automatically.
 
 ## My Netlify Projects
 Here are a few of my projects that are hosted on Netlify:
@@ -22,7 +24,12 @@ Here are a few of my projects that are hosted on Netlify:
 
 ![Netlify](../img/netlify-projects.png "Netlify Projects")
 
-## Getting started on Netlify
+## Getting started with Netlify
+
+### Netlify Docs
+
+The [Netlify Docs](https://docs.netlify.com/) is a tremendous place to get started. There are also several articles out there in the Netlify docs
+and elsewhere that can show you more specific guides like hosting Hugo on Netlify, Jekyll on Netlify and other [static site generator](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/) guides that are compatible with Netlify.
 
 ### Supported Git Providers
 

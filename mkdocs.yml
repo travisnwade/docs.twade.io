@@ -1,39 +1,77 @@
+#########################
+# BASELINE SITE DETAILS #
+#########################
+
 site_name: Travis Wade Wiki
 site_url: https://docs.twade.io
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
 copyright: © 2023 <a href="https://links.twade.io" target="_blank">Travis Wade</a>
-extra_css:
-  - css/custom.css
-extra_javascript:
-  - js/custom.js  
 theme: readthedocs
-markdown_extensions:
-  - footnotes
-  - pymdownx.critic  
-  - pymdownx.superfences 
-  #- pymdownx.details  
-  - attr_list
-  - def_list
-  - fenced_code
-  - admonition 
+
+##############
+# NAVIGATION #
+##############
+
 nav:
   - Docs:
-    - Home: index.md
-    - Netlify: netlify/index.md
-    - Windows: windows/index.md
-    - Powershell: powershell/index.md
-    - Ansible: ansible/index.md
-    - MKDocs Help: mkdocs-help/index.md    
-    - About: about.md
+    - Home: README.md
+    - Netlify: netlify/README.md
+    - Windows: windows/README.md
+    - Powershell: powershell/README.md
+    - Ansible: ansible/README.md
+    - MKDocs Help: mkdocs-help/README.md    
+    - About: about/README.md
   - Tools:
     - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
     - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/" target="_blank
-    - Downloads: downloads/index.md
+    - Downloads: downloads/README.md
   - Awesome Extras:
     - 'Awesome Self Hosted': https://github.com/awesome-selfhosted/awesome-selfhosted#table-of-contents" target="_blank
   - More About Travis:
     - 'Github': https://github.com/travisnwade" target="_blank
     - 'LinkedIn': https://www.linkedin.com/in/traviswade/" target="_blank
     - 'Instagram': https://www.instagram.com/tn_wade/" target="_blank
-    - 'Links Page': https://links.twade.io  " target="_blank    
+    - 'Links Page': https://links.twade.io  " target="_blank  
+
+####################
+# EXTRA CSS AND JS #
+####################
+
+extra_css:
+  - css/custom.css
+  - css/glightbox.css
+extra_javascript:
+  - js/custom.js
+  - js/glightbox.js 
+
+##############
+# EXTENSIONS #
+############## 
+
+markdown_extensions:
+  - footnotes
+  - pymdownx.critic  
+  - pymdownx.superfences
+  - attr_list
+  - def_list
+  - fenced_code
+  - admonition 
+
+###########
+# PLUGINS #
+###########
+
+plugins:
+  - glightbox:
+      touchNavigation: true
+      loop: true
+      effect: none
+      slide_effect: none
+      zoomable: true
+      draggable: true
+  - autorefs  
+
+###############
+# END OF FILE #
+###############

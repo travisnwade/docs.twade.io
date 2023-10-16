@@ -22,72 +22,23 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 _Much of the software below can be installed via Chocolatey FYI!_
 
-#### Notepad++
-
-* [Notepad++](https://notepad-plus-plus.org/downloads/). With chocolatey:
-
-```
-choco install notepadplusplus
-```
-
-#### 7zip
-* [7zip](https://www.7-zip.org/download.html). With chocolatey:
-
-```
-choco install 7zip
-```
-
-#### VSCode
-* [VSCode](https://code.visualstudio.com/download). With chocolatey:
-
-```
-choco install vscode
-```
-
-#### Filezilla Client
-* [Filezilla Client](https://filezilla-project.org/download.php). With chocolatey:
-
-```
-choco install filezilla
-```
-
-#### Putty
-* [Putty](https://www.putty.org/). With chocolatey:
-
-```
-choco install putty
-```
-
-#### WinSCP
-* [WinSCP](https://winscp.net/eng/download.php). With chocolatey:
-
-```
-choco install winscp
-```
-
-#### Git for Windows
-* [Git for Windows](https://git-scm.com/download/win). With chocolatey:
-
-```
-choco install git
-```
-
-#### Bootable USB
-* [Rufus](https://rufus.ie/en/) 
-
-#### Windows Terminal
-* [Windows Terminal](https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=US)
+| Software | Link | Choco Install |
+| -------- | -------- | ------ |
+| Notepad++ | [Notepad++](https://notepad-plus-plus.org/downloads/) | `choco install notepadplusplus` |
+| 7zip | [7zip](https://www.7-zip.org/download.html) | `choco install 7zip` |
+| VSCode | [VSCode](https://code.visualstudio.com/download) | `choco install vscode` |
+| Filezilla Client | [Filezilla Client](https://filezilla-project.org/download.php) | `choco install filezilla` |
+| Putty | [Putty](https://www.putty.org/) | `choco install putty` |
+| WinSCP | [WinSCP](https://winscp.net/eng/download.php) | `choco install winscp` |
+| Git for Windows | [Git for Windows](https://git-scm.com/download/win) | `choco install git` |
+| Rufus | [Rufus](https://rufus.ie/en/) | `none` |
+| Windows Terminal | [Windows Terminal](https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=US) | `none` |
 
 ## Operating Sytems
 
-### Ubuntu
-* [Ubuntu](https://ubuntu.com/download/server)
-
-### CentOS
-* [CentOS](https://www.centos.org/download/)
-
-### Fedora
-* [Fedora](https://fedoraproject.org/workstation/download/)
-
-### Linux Mint
-* [Mint](https://www.linuxmint.com/download.php)
+| OS | Link |
+| -------- | -------- |
+| Ubuntu | [Ubuntu](https://ubuntu.com/download/server) |
+| CentOS | [CentOS](https://www.centos.org/download/) |
+| Fedora | [Fedora](https://fedoraproject.org/workstation/download/) |
+| Mint | [Mint](https://www.linuxmint.com/download.php) |

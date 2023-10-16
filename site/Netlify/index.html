@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../css/custom.css" rel="stylesheet" />
+        <link href="../css/glightbox.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -23,7 +24,12 @@
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
       <script>hljs.highlightAll();</script> 
-</head>
+ <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
 
 <body class="wy-body-for-nav" role="document">
 
@@ -32,11 +38,7 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href=".." class="icon icon-home"> Travis Wade Wiki
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
+        </a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -48,8 +50,10 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#my-netlify-projects">My Netlify Projects</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#getting-started-on-netlify">Getting started on Netlify</a>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-netlify">Getting started with Netlify</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#netlify-docs">Netlify Docs</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#supported-git-providers">Supported Git Providers</a>
     </li>
         </ul>
@@ -117,10 +121,11 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="about-netlify">About Netlify</h1>
-<p>Netlify is a kickass development tool.</p>
-<p>Essentially, it can take your existing repositories (I use Github for my personal projects), and can deploy, run builds and more.
-Which is all then served from their global CDN which is fast as hell!
-And all I have to do is commit and push my code to the repo.  Netlify then deploys it.</p>
+<p>Netlify is a kickass development tool and static file hosting service.  You can get started for free and you get a lot of features with it.</p>
+<p>Essentially, it can take your existing repositories (I use Github for my personal projects), and can deploy, run builds and more. (such as <code>npm run build</code> and more during deployment
+)
+Which is all then served from their global CDN which is fast as hell!</p>
+<p>And all I have to do is commit and push my code to the repo.  Netlify then deploys it automatically.</p>
 <h2 id="my-netlify-projects">My Netlify Projects</h2>
 <p>Here are a few of my projects that are hosted on Netlify:</p>
 <ol>
@@ -135,10 +140,13 @@ And all I have to do is commit and push my code to the repo.  Netlify then deplo
 <li>Fabric me this.  My wife's link page (using the same open source one I mentioned in bullet 2 above) with a fully functional contact form: <a href="https://www.fabricmethis.com/">fabricmethis.com</a></li>
 <li>A super simple kids schedule. Not the most perfect, but looks nice on a TV in a common room that the children can reference for their daily schedule: <a href="https://kids.tandj.io/">kids.tandj.io</a></li>
 </ol>
-<p><img alt="Netlify" src="../img/netlify-projects.png" title="Netlify Projects" /></p>
-<h2 id="getting-started-on-netlify">Getting started on Netlify</h2>
+<p><a class="glightbox" href="../img/netlify-projects.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Netlify" src="../img/netlify-projects.png" title="Netlify Projects" /></a></p>
+<h2 id="getting-started-with-netlify">Getting started with Netlify</h2>
+<h3 id="netlify-docs">Netlify Docs</h3>
+<p>The <a href="https://docs.netlify.com/">Netlify Docs</a> is a tremendous place to get started. There are also several articles out there in the Netlify docs
+and elsewhere that can show you more specific guides like hosting Hugo on Netlify, Jekyll on Netlify and other <a href="https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/">static site generator</a> guides that are compatible with Netlify.</p>
 <h3 id="supported-git-providers">Supported Git Providers</h3>
-<p><img alt="Netlify" src="../img/netlify-git-providers.png" title="Netlify Git Providers" /></p>
+<p><a class="glightbox" href="../img/netlify-git-providers.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Netlify" src="../img/netlify-git-providers.png" title="Netlify Git Providers" /></a></p>
               
             </div>
           </div><footer>
@@ -180,12 +188,12 @@ And all I have to do is commit and push my code to the repo.  Netlify then deplo
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
       <script src="../js/custom.js"></script>
-      <script src="../search/main.js"></script>
+      <script src="../js/glightbox.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
         });
     </script>
 
-</body>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": true, "draggable": true, "openEffect": "none", "closeEffect": "none", "slideEffect": "none"});</script></body>
 </html>

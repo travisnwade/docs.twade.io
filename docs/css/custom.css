@@ -1,3 +1,7 @@
+/* ############# */
+/* THEME STYLING */
+/* ############# */
+
 .wy-nav-content, .wy-body-for-nav, .wy-nav-content-wrap {
     background: #fcfcfc
 }
@@ -20,6 +24,10 @@ pre {
     padding: 0px !important;
 }
 
+/* ####### */
+/* BUTTONS */
+/* ####### */
+
 .md-button {
     padding: 15px;
     margin: 6px 8px 6px 8px;
@@ -35,7 +43,7 @@ pre {
     color: #fff;
   }
 
-  .md-button--primary {
+.md-button--primary {
     padding: 12px;
     margin: 6px 8px 6px 8px;
     min-width: 88px;
@@ -48,4 +56,13 @@ pre {
     outline: none;
     background-color: #606a69;
     color: #fff
-  }  
+}  
+
+/* ########### */
+/* HEADERLINKS */
+/* ########### */
+
+a.headerlink {
+    font-size: 20px !important;
+    margin-left: 0.4em !important;    
+}

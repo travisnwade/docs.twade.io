@@ -14,14 +14,20 @@ theme: readthedocs
 ##############
 
 nav:
-  - Docs:
-    - Home: README.md
+  - Home: README.md
+  - About: about/README.md
+  - Hosting:
     - Netlify: netlify/README.md
+    - Vultr: vultr/README.md
+    - Cloudways: cloudways/README.md
+  - SSG:
+    - Jekyll: jekyll/README.md
+    - Hugo: hugo/README.md
+  - Guides:  
     - Windows: windows/README.md
     - Powershell: powershell/README.md
     - Ansible: ansible/README.md
     - MKDocs Help: mkdocs-help/README.md    
-    - About: about/README.md
   - Tools:
     - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
     - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/" target="_blank

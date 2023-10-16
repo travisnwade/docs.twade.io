@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Travis Wade" /><link rel="canonical" href="https://docs.twade.io/windows/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Travis Wade" /><link rel="canonical" href="https://docs.twade.io/vultr/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Windows - Travis Wade Wiki</title>
+    <title>Vultr - Travis Wade Wiki</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -14,9 +14,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Windows";
-        var mkdocs_page_input_path = "windows\\README.md";
-        var mkdocs_page_url = "/windows/";
+        var mkdocs_page_name = "Vultr";
+        var mkdocs_page_input_path = "vultr\\README.md";
+        var mkdocs_page_url = "/vultr/";
       </script>
     
     <!--[if lt IE 9]>
@@ -51,10 +51,18 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Hosting</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../netlify/">Netlify</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../vultr/">Vultr</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Vultr</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-vultr">What is Vultr?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-to-deploy">What to Deploy?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reference-docs">Reference Docs</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../cloudways/">Cloudways</a>
                   </li>
@@ -67,16 +75,8 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guides</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Windows</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#section-1">Section 1</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-2">Section 2</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-3">Section 3</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../windows/">Windows</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../powershell/">Powershell</a>
                   </li>
@@ -124,8 +124,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Guides</li>
-      <li class="breadcrumb-item active">Windows</li>
+          <li class="breadcrumb-item">Hosting</li>
+      <li class="breadcrumb-item active">Vultr</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -134,17 +134,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="windows">Windows</h1>
-<p>Some boiler plate text.</p>
-<h2 id="section-1">Section 1</h2>
-<h2 id="section-2">Section 2</h2>
-<h2 id="section-3">Section 3</h2>
+                <h1 id="vultr">Vultr</h1>
+<p><a href="https://www.vultr.com/?ref=6890804"><img alt="Vultr" src="../img/vultr.svg" title="Vultr" /></a></p>
+<h2 id="what-is-vultr">What is Vultr?</h2>
+<p><a href="https://www.vultr.com/company/about-us/">Vultr</a> is a super simple <a href="https://aws.amazon.com/what-is/vps/">VPS</a> hosting provider. </p>
+<p>Hosting applications that require a bit more compute capability than that of my other favorite, <a href="/netlify/">Netlify</a>, I typically go with Vultr.</p>
+<p>Chose your OS, choose your stack, and click deploy.  You then have your very own server! There are so many options to chose from to fit your
+needs and your budget. Add additional block storage, object storage, firewall rules to protect your VPS, custom networks (VPC's) and more.</p>
+<p>If you need the capability of a little more rigerous hosting provider without the bloat and complexity, Vultr is for sure the way to go in my opinion.
+I've been using them for years, and am always satisfied.</p>
+<h2 id="what-to-deploy">What to Deploy?</h2>
+<p>Here's a little screenshot of the "new deploy" menu:</p>
+<p><a class="glightbox" href="../img/vultr-deploy.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy.png" title="Vultr" /></a></p>
+<p>Here's a screenshot showing the affordability and customization options you have:</p>
+<p><a class="glightbox" href="../img/vultr-deploy-selection.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy-selection.png" title="Vultr" /></a></p>
+<p><a class="glightbox" href="../img/vultr-deploy-location.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy-location.png" title="Vultr" /></a></p>
+<p><a class="glightbox" href="../img/vultr-deploy-os-selection.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy-os-selection.png" title="Vultr" /></a></p>
+<p>You can even upload your own OS (<code>.iso</code>) or deploy from a backup or snapshot:</p>
+<p><a class="glightbox" href="../img/vultr-deploy-custom-os.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy-custom-os.png" title="Vultr" /></a></p>
+<p><a class="glightbox" href="../img/vultr-deploy-sizing.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy-sizing.png" title="Vultr" /></a></p>
+<p><a class="glightbox" href="../img/vultr-deploy-options-selection.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vultr" src="../img/vultr-deploy-options-selection.png" title="Vultr" /></a></p>
+<h2 id="reference-docs">Reference Docs</h2>
+<p>There are quite a lot of reference documentation that Vultr hosts itself to assist you with most things that you could want to deploy.</p>
+<p>For the applications that you want to host, and Vultr doesn't have a doc on it, the good thing is that it's still a server, and you can
+reference other documentation for how to build and configure your application according to the OS you choose.  Pretty slick.</p>
+<ul>
+<li><a href="https://www.vultr.com/docs/category/arch/">Operating Systems</a></li>
+<li><a href="https://www.vultr.com/docs/category/apps/">One-Click Apps</a></li>
+<li><a href="https://www.vultr.com/docs/category/devops/">DevOps</a></li>
+<li><a href="https://www.vultr.com/docs/category/best-practices/">Vultr Reference Guides</a></li>
+<li><a href="https://www.vultr.com/docs/category/game-servers/">Game Servers</a></li>
+<li><a href="https://www.vultr.com/docs/category/blogging/">Server Apps</a></li>
+<li><a href="https://www.vultr.com/docs/category/containers/">Infrastructure</a></li>
+<li><a href="https://www.vultr.com/docs/category/databases/">Databases</a></li>
+</ul>
+<p><a href="https://www.vultr.com/?ref=6890804"><img alt="Vultr" src="../img/vultr.svg" title="Vultr" /></a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../hugo/" class="btn btn-neutral float-left" title="Hugo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../powershell/" class="btn btn-neutral float-right" title="Powershell">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../netlify/" class="btn btn-neutral float-left" title="Netlify"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../cloudways/" class="btn btn-neutral float-right" title="Cloudways">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -168,10 +198,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../hugo/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../netlify/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../powershell/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../cloudways/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -16,7 +16,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.twade.io/cloudways/</loc>
+         <lastmod>2023-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.twade.io/downloads/</loc>
+         <lastmod>2023-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.twade.io/hugo/</loc>
+         <lastmod>2023-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.twade.io/jekyll/</loc>
          <lastmod>2023-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -32,6 +47,11 @@
     </url>
     <url>
          <loc>https://docs.twade.io/powershell/</loc>
+         <lastmod>2023-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.twade.io/vultr/</loc>
          <lastmod>2023-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

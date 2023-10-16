@@ -65,6 +65,46 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Downloads</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chocolatey">Chocolatey</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#software">Software</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#notepad">Notepad++</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#7zip">7zip</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vscode">VSCode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#filezilla-client">Filezilla Client</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#putty">Putty</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#winscp">WinSCP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#git-for-windows">Git for Windows</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bootable-usb">Bootable USB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#windows-terminal">Windows Terminal</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#operating-sytems">Operating Sytems</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ubuntu">Ubuntu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#centos">CentOS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fedora">Fedora</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linux-mint">Linux Mint</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -109,15 +149,92 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="downloads">Downloads</h1>
+<h2 id="tools">Tools</h2>
+<h3 id="chocolatey">Chocolatey</h3>
 <p>Here are a list of tools that I use all the time. And typically ones that I get installed right away.</p>
 <ul>
 <li><a href="https://chocolatey.org/install">Chocolatey</a></li>
+<li><a href="https://chocolatey.org/install">Official Chocolatey Install Guide</a></li>
+<li>Install Chocolatey via PowerShell<ul>
+<li>First, you need to run this in an elevated PowerShell prompt (run as admin)<ul>
+<li><a href="https://docs.chocolatey.org/en-us/chocolatey-components-dependencies-and-support-lifecycle#supported-windows-versions">Supported Windows client and server Operating Systems</a> (can run on older Operating Systems)</li>
+<li>PowerShell v2+ (minimum is v3 for install from this website due to <a href="https://chocolatey.org/blog/remove-support-for-old-tls-versions">TLS 1.2 requirement</a>)</li>
+<li>.NET Framework 4.8 (the installation will attempt to install .NET 4.8 if you do not have it installed)</li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
+</code></pre></div>
+<h3 id="software">Software</h3>
 <p><em>Much of the software below can be installed via Chocolatey FYI!</em></p>
+<h4 id="notepad">Notepad++</h4>
 <ul>
-<li><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a> or with chocolatey: <code>choco install notepadplusplus</code></li>
-<li><a href="https://www.7-zip.org/download.html">7zip</a> or with chocolatey: <code>choco install 7zip</code></li>
-<li><a href="https://code.visualstudio.com/download">VSCode</a> or with chocolatey: <code>choco install vscode</code></li>
+<li><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install notepadplusplus
+</code></pre></div>
+<h4 id="7zip">7zip</h4>
+<ul>
+<li><a href="https://www.7-zip.org/download.html">7zip</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install 7zip
+</code></pre></div>
+<h4 id="vscode">VSCode</h4>
+<ul>
+<li><a href="https://code.visualstudio.com/download">VSCode</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install vscode
+</code></pre></div>
+<h4 id="filezilla-client">Filezilla Client</h4>
+<ul>
+<li><a href="https://filezilla-project.org/download.php">Filezilla Client</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install filezilla
+</code></pre></div>
+<h4 id="putty">Putty</h4>
+<ul>
+<li><a href="https://www.putty.org/">Putty</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install putty
+</code></pre></div>
+<h4 id="winscp">WinSCP</h4>
+<ul>
+<li><a href="https://winscp.net/eng/download.php">WinSCP</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install winscp
+</code></pre></div>
+<h4 id="git-for-windows">Git for Windows</h4>
+<ul>
+<li><a href="https://git-scm.com/download/win">Git for Windows</a>. With chocolatey:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>choco install git
+</code></pre></div>
+<h4 id="bootable-usb">Bootable USB</h4>
+<ul>
+<li><a href="https://rufus.ie/en/">Rufus</a> </li>
+</ul>
+<h4 id="windows-terminal">Windows Terminal</h4>
+<ul>
+<li><a href="https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-us&amp;gl=US">Windows Terminal</a></li>
+</ul>
+<h2 id="operating-sytems">Operating Sytems</h2>
+<h3 id="ubuntu">Ubuntu</h3>
+<ul>
+<li><a href="https://ubuntu.com/download/server">Ubuntu</a></li>
+</ul>
+<h3 id="centos">CentOS</h3>
+<ul>
+<li><a href="https://www.centos.org/download/">CentOS</a></li>
+</ul>
+<h3 id="fedora">Fedora</h3>
+<ul>
+<li><a href="https://fedoraproject.org/workstation/download/">Fedora</a></li>
+</ul>
+<h3 id="linux-mint">Linux Mint</h3>
+<ul>
+<li><a href="https://www.linuxmint.com/download.php">Mint</a></li>
 </ul>
               
             </div>

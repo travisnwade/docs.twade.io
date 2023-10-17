@@ -1,5 +1,9 @@
 # Help for MKDocs
 
+## Official MKDocs Wiki
+
+The offical page for MKDocs can be found here: [https://www.mkdocs.org/](https://www.mkdocs.org/)
+
 ## mkdocs.yml Example
 
 This is an example of my current `mkdocs.yml` file for this site:

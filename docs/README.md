@@ -13,7 +13,11 @@ which can then be published directly to Netlify's CDN.  Free, easy SSL, and mini
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Where I host this
+
 ### [Netlify](/netlify/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/05266a82-fd28-43f5-93bd-e98807c06bb9/deploy-status)](https://app.netlify.com/sites/dazzling-cobbler-656489/deploys)
+
 I host this site completely on [Netlify](https://www.netlify.com/) on a free account. But that also comes with custom domain, free HTTPS. Which is badass!
 
 There's no database to manage, just simple, flat files that I can write content using markdown, and one simple command that generates all static HTML files.

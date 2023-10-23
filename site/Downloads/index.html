@@ -155,8 +155,7 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
-</code></pre></div>
+<pre class="highlight"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</code></pre>
 <h3 id="software">Software</h3>
 <p><em>Much of the software below can be installed via Chocolatey FYI!</em></p>
 <table>
@@ -202,6 +201,16 @@
 <td>Git for Windows</td>
 <td><a href="https://git-scm.com/download/win">Git for Windows</a></td>
 <td><code>choco install git</code></td>
+</tr>
+<tr>
+<td>NodeJS &amp; NPM</td>
+<td><a href="https://nodejs.org/en/download">NodeJS for Windows</a></td>
+<td><code>choco intall nodejs.install</code></td>
+</tr>
+<tr>
+<td>Python 3</td>
+<td><a href="https://docs.python-guide.org/starting/install3/win/#install3-windows">Python PIP for Windows</a></td>
+<td><code>choco install python</code></td>
 </tr>
 <tr>
 <td>Rufus</td>

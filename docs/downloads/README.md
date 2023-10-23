@@ -31,6 +31,8 @@ _Much of the software below can be installed via Chocolatey FYI!_
 | Putty | [Putty](https://www.putty.org/) | `choco install putty` |
 | WinSCP | [WinSCP](https://winscp.net/eng/download.php) | `choco install winscp` |
 | Git for Windows | [Git for Windows](https://git-scm.com/download/win) | `choco install git` |
+| NodeJS & NPM | [NodeJS for Windows](https://nodejs.org/en/download) | `choco intall nodejs.install` |
+| Python 3 | [Python PIP for Windows](https://docs.python-guide.org/starting/install3/win/#install3-windows) | `choco install python` |
 | Rufus | [Rufus](https://rufus.ie/en/) | `none` |
 | Windows Terminal | [Windows Terminal](https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=US) | `none` |
 

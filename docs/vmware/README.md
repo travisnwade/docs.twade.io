@@ -1,5 +1,49 @@
 # VMware
 
+## Start and Stop or Restart vCenter Server 6.x Services
+
+For reference: [VMware 2109881](https://kb.vmware.com/s/article/2109881)
+
+### List Services
+
+Run this command to list the vCenter Server and/or Platform Services Controller services:
+
+```
+service-control --list
+```
+
+### Start a specific service
+
+Start a specific service:
+
+```
+service-control --start servicename
+```
+
+### Start all services
+
+Start all services:
+
+```
+service-control --start --all
+```
+
+### Stop a specific service
+
+Stop a specific service:
+
+```
+service-control --stop servicename
+```
+
+### Stop all services
+
+Stop all services:
+
+```
+service-control --stop --all
+```
+
 ## Detailed description of VCSA Services
 
 ```

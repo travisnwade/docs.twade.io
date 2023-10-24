@@ -59,6 +59,12 @@ Once you've created your GPO and assigned it to the OU(s) where your servers are
 7. Click OK.
 8. Once you've done that for both groups, click OK until you're back to the WMI Control. Close the window.
 
+### Enable Firewall Rules for WMI
+
+1. Open the Advanced Firewall rules and navigate to `Inbound Rules`.
+2. Find the following rules and simply `Enable` them: `Windows Management Instrumentation (ASync-in)`, `Windows Management Instrumentation (DCOM-In)` and `Windows Management Instrumentation (WMI-In)`.
+3. Do the exact same for these two rules: `Windows Remote Management (HTTP-In)` and `Windows Remote Management (HTTP-In)`. Yes, they're the same name but with different `Remote Address`.
+
 ### Restart WMI and WSMan
 
 1. Open the services MMC by running `services.msc` from the start menu or in the `run` prompt.

@@ -78,6 +78,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#set-wmi-namespace-permissions">Set WMI Namespace Permissions</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-firewall-rules-for-wmi">Enable Firewall Rules for WMI</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#restart-wmi-and-wsman">Restart WMI and WSMan</a>
     </li>
         </ul>
@@ -191,6 +193,12 @@
 <li>Do this for both groups <code>Distributed COM Users</code> and <code>Performance Monitor Users</code>: Click <code>Advanced</code> &gt; Select <em>respectively</em> (do this for both groups), highlight the group &gt; Click <code>Edit</code> &gt; In the <code>Applies to:</code> drop down, select <code>This namespace and subnamespaces</code>.</li>
 <li>Click OK.</li>
 <li>Once you've done that for both groups, click OK until you're back to the WMI Control. Close the window.</li>
+</ol>
+<h3 id="enable-firewall-rules-for-wmi">Enable Firewall Rules for WMI</h3>
+<ol>
+<li>Open the Advanced Firewall rules and navigate to <code>Inbound Rules</code>.</li>
+<li>Find the following rules and simply <code>Enable</code> them: <code>Windows Management Instrumentation (ASync-in)</code>, <code>Windows Management Instrumentation (DCOM-In)</code> and <code>Windows Management Instrumentation (WMI-In)</code>.</li>
+<li>Do the exact same for these two rules: <code>Windows Remote Management (HTTP-In)</code> and <code>Windows Remote Management (HTTP-In)</code>. Yes, they're the same name but with different <code>Remote Address</code>.</li>
 </ol>
 <h3 id="restart-wmi-and-wsman">Restart WMI and WSMan</h3>
 <ol>

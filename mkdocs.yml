@@ -20,6 +20,7 @@ nav:
     - Netlify: netlify/README.md
     - Vultr: vultr/README.md
     - Cloudways: cloudways/README.md
+    - VMware: vmware/README.md
   - SSG:
     - Jekyll: jekyll/README.md
   - Guides:  

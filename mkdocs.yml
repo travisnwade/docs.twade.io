@@ -22,8 +22,6 @@ nav:
     - Cloudways: cloudways/README.md
   - SSG:
     - Jekyll: jekyll/README.md
-    - Hugo: hugo/README.md
-    - Hexo: hexo/README.md
   - Guides:  
     - Windows: windows/README.md
     - Powershell: powershell/README.md

@@ -1,8 +1,8 @@
 # Windows
 
-## Monitor with WMI remotely withough being a local administrator
+## Monitor with WMI remotely without being a local administrator
 
-This is something that I've fought with time and time again. I largely use PRTG as a monitoring tool which is fantastic because it doesn't require remote agents to gather performance data.
+This is something that I've fought with time and time again. I largely use [PRTG](https://www.paessler.com/) as a monitoring tool which is fantastic because it doesn't require remote agents to gather performance data.
 
 The downside, is if you want to stay in line with security best practices, your service account that you utilize with PRTG you'd rather not make it a Domain Administrator just to simply give it the necessary permissions to read performance metrics.
 
@@ -18,7 +18,7 @@ Just name it something like `svc_<monitoring user>`. Where `<monitoring user>` i
 
 1. Leave the default domain policy alone.
 2. Create a new GPO
-3. go to:  `Computer Configuration` > `Policies` > `Windows Settings` > `Security Settings`. Click on `Restricted Groups`. Right-click on `Restricted Groups` and select `Add Group`.
+3. Go to:  `Computer Configuration` > `Policies` > `Windows Settings` > `Security Settings`. Click on `Restricted Groups`. Right-click on `Restricted Groups` and select `Add Group`.
 4. Select the desired domain group and click ok.
 5. In the bottom portion of the new windows "this group is a member of": click on `add`.
 

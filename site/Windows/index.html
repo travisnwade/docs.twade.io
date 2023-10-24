@@ -68,7 +68,7 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Windows</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#monitor-with-wmi-remotely-withough-being-a-local-administrator">Monitor with WMI remotely withough being a local administrator</a>
+    <li class="toctree-l2"><a class="reference internal" href="#monitor-with-wmi-remotely-without-being-a-local-administrator">Monitor with WMI remotely without being a local administrator</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#create-your-monitoring-service-account">Create your monitoring service account</a>
     </li>
@@ -141,8 +141,8 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="windows">Windows</h1>
-<h2 id="monitor-with-wmi-remotely-withough-being-a-local-administrator">Monitor with WMI remotely withough being a local administrator</h2>
-<p>This is something that I've fought with time and time again. I largely use PRTG as a monitoring tool which is fantastic because it doesn't require remote agents to gather performance data.</p>
+<h2 id="monitor-with-wmi-remotely-without-being-a-local-administrator">Monitor with WMI remotely without being a local administrator</h2>
+<p>This is something that I've fought with time and time again. I largely use <a href="https://www.paessler.com/">PRTG</a> as a monitoring tool which is fantastic because it doesn't require remote agents to gather performance data.</p>
 <p>The downside, is if you want to stay in line with security best practices, your service account that you utilize with PRTG you'd rather not make it a Domain Administrator just to simply give it the necessary permissions to read performance metrics.</p>
 <p>Now, this may be overkill, but here's what I've manged to achieve in order to grant the active directory service account I use with PRTG so that it isn't a priviledged account, but still has the permissions it needs to read WMI namespaces for performance monitoring.</p>
 <h3 id="create-your-monitoring-service-account">Create your monitoring service account</h3>
@@ -152,7 +152,7 @@
 <ol>
 <li>Leave the default domain policy alone.</li>
 <li>Create a new GPO</li>
-<li>go to:  <code>Computer Configuration</code> &gt; <code>Policies</code> &gt; <code>Windows Settings</code> &gt; <code>Security Settings</code>. Click on <code>Restricted Groups</code>. Right-click on <code>Restricted Groups</code> and select <code>Add Group</code>.</li>
+<li>Go to:  <code>Computer Configuration</code> &gt; <code>Policies</code> &gt; <code>Windows Settings</code> &gt; <code>Security Settings</code>. Click on <code>Restricted Groups</code>. Right-click on <code>Restricted Groups</code> and select <code>Add Group</code>.</li>
 <li>Select the desired domain group and click ok.</li>
 <li>In the bottom portion of the new windows "this group is a member of": click on <code>add</code>.</li>
 </ol>

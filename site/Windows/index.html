@@ -68,11 +68,19 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Windows</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#section-1">Section 1</a>
+    <li class="toctree-l2"><a class="reference internal" href="#monitor-with-wmi-remotely-withough-being-a-local-administrator">Monitor with WMI remotely withough being a local administrator</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-your-monitoring-service-account">Create your monitoring service account</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-2">Section 2</a>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-gpo-to-add-this-user-to-local-monitoring-groups">Create a GPO to add this user to local monitoring groups.</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-3">Section 3</a>
+    <li class="toctree-l3"><a class="reference internal" href="#set-component-services-permissions">Set Component Services Permissions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-wmi-namespace-permissions">Set WMI Namespace Permissions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restart-wmi-and-wsman">Restart WMI and WSMan</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -133,10 +141,63 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="windows">Windows</h1>
-<p>Some boiler plate text.</p>
-<h2 id="section-1">Section 1</h2>
-<h2 id="section-2">Section 2</h2>
-<h2 id="section-3">Section 3</h2>
+<h2 id="monitor-with-wmi-remotely-withough-being-a-local-administrator">Monitor with WMI remotely withough being a local administrator</h2>
+<p>This is something that I've fought with time and time again. I largely use PRTG as a monitoring tool which is fantastic because it doesn't require remote agents to gather performance data.</p>
+<p>The downside, is if you want to stay in line with security best practices, your service account that you utilize with PRTG you'd rather not make it a Domain Administrator just to simply give it the necessary permissions to read performance metrics.</p>
+<p>Now, this may be overkill, but here's what I've manged to achieve in order to grant the active directory service account I use with PRTG so that it isn't a priviledged account, but still has the permissions it needs to read WMI namespaces for performance monitoring.</p>
+<h3 id="create-your-monitoring-service-account">Create your monitoring service account</h3>
+<p>This should be a no-brainer, but create your service account in accordance with whatever requirements you need (password rotation, OU location, etc).</p>
+<p>Just name it something like <code>svc_&lt;monitoring user&gt;</code>. Where <code>&lt;monitoring user&gt;</code> is something you can identify.</p>
+<h3 id="create-a-gpo-to-add-this-user-to-local-monitoring-groups">Create a GPO to add this user to local monitoring groups.</h3>
+<ol>
+<li>Leave the default domain policy alone.</li>
+<li>Create a new GPO</li>
+<li>go to:  <code>Computer Configuration</code> &gt; <code>Policies</code> &gt; <code>Windows Settings</code> &gt; <code>Security Settings</code>. Click on <code>Restricted Groups</code>. Right-click on <code>Restricted Groups</code> and select <code>Add Group</code>.</li>
+<li>Select the desired domain group and click ok.</li>
+<li>In the bottom portion of the new windows "this group is a member of": click on <code>add</code>.</li>
+</ol>
+<p>Add your monitoring user to these groups:</p>
+<ol>
+<li>Distributed COM Users</li>
+<li>Event Log Readers</li>
+<li>Performance Monitor Users</li>
+<li>Performance Log Users</li>
+</ol>
+<p>Once you've created your GPO and assigned it to the OU(s) where your servers are located, and the GPO has had time to replicate, go to your servers and do a <code>gpupdate</code> so that the monitoring user service account gets added to the local groups you specified in the GPO above.</p>
+<h3 id="set-component-services-permissions">Set Component Services Permissions</h3>
+<ol>
+<li>Open the Component Services MMC on the server.  You can open this with <code>run</code> or just by typing this in the start menu search: <code>dcomcnfg.exe</code></li>
+<li>Expand <code>Console Root</code> &gt; <code>Component Services</code> &gt; <code>Computers</code>.</li>
+<li>Right click on <code>My Computer</code> &gt; Select <code>Properties</code></li>
+<li>Click on the <code>COM Security</code> tab.</li>
+<li>Under <code>Launch and Activation Permissions</code> section, click on <code>Edit Limits</code></li>
+<li>Click <code>Add...</code> &gt; Change location to the local computer (not your Active Directory)</li>
+<li>Click <code>Advanced</code> &gt; then click <code>Find Now</code></li>
+<li>Use <code>CNTL</code> + <code>left click</code> to select <em>both</em> <code>Distributed COM Users</code> <em>AND</em> <code>Performance Monitor Users</code>. </li>
+<li>Click OK.</li>
+<li>Click OK again.</li>
+<li>Do this step for both local groups of <code>Distributed COM Users</code> and <code>Performance Monitor Users</code>: Place a check mark in all four boxes for <code>Local Launch</code>, <code>Remote Launch</code>, <code>Local Activation</code> and <code>Remote Activation</code>.</li>
+<li>Click OK.</li>
+<li>Click OK again.</li>
+<li>Close Component Services MMC.</li>
+</ol>
+<h3 id="set-wmi-namespace-permissions">Set WMI Namespace Permissions</h3>
+<ol>
+<li>Open the WMI management MMC on the server by running <code>wmimgmt.msc</code> from the start menu or the <code>run</code> prompt.</li>
+<li>Select <code>WMI Console (Local)</code>, right click and select <code>Properties</code>.</li>
+<li>Select the <code>Security</code> tab &gt; highlight <code>Root</code> &gt; Click on <code>Security</code>.</li>
+<li>Add both local groups of <code>Distributed COM Users</code> and <code>Performance Monitor Users</code> by clicking on <code>Add...</code> &gt; Change location to the local computer (not your Active Directory). Same thing you did in step 6, 7, 8 above.</li>
+<li>Select the following boxes for <em>each</em> <code>Distributed COM Users</code> and <code>Performance Monitor Users</code>: <code>Execute Methods</code>, <code>Enable Account</code> and <code>Remote Enable</code>.</li>
+<li>Do this for both groups <code>Distributed COM Users</code> and <code>Performance Monitor Users</code>: Click <code>Advanced</code> &gt; Select <em>respectively</em> (do this for both groups), highlight the group &gt; Click <code>Edit</code> &gt; In the <code>Applies to:</code> drop down, select <code>This namespace and subnamespaces</code>.</li>
+<li>Click OK.</li>
+<li>Once you've done that for both groups, click OK until you're back to the WMI Control. Close the window.</li>
+</ol>
+<h3 id="restart-wmi-and-wsman">Restart WMI and WSMan</h3>
+<ol>
+<li>Open the services MMC by running <code>services.msc</code> from the start menu or in the <code>run</code> prompt.</li>
+<li>For <em>both</em> services: <code>Windows Management Instrumentation</code> <em>AND</em> <code>Windows Remote Mangement</code>: click <code>restart</code> for each service.</li>
+</ol>
+<p>This <em>should</em> be all you need to give your active directory service account for monitoring the appropriate permissions needed to monitor all performance metrics without the need to be either a Domain Administrator or a local administrator.  Making your security team happy.</p>
               
             </div>
           </div><footer>

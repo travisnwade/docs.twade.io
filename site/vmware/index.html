@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Travis Wade" /><link rel="canonical" href="https://docs.twade.io/jekyll/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Travis Wade" /><link rel="canonical" href="https://docs.twade.io/vmware/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Jekyll - Travis Wade Wiki</title>
+    <title>VMware - Travis Wade Wiki</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -14,9 +14,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Jekyll";
-        var mkdocs_page_input_path = "jekyll\\README.md";
-        var mkdocs_page_url = "/jekyll/";
+        var mkdocs_page_name = "VMware";
+        var mkdocs_page_input_path = "vmware\\README.md";
+        var mkdocs_page_url = "/vmware/";
       </script>
     
     <!--[if lt IE 9]>
@@ -51,27 +51,23 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Hosting</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../netlify/">Netlify</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../vultr/">Vultr</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../cloudways/">Cloudways</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../vmware/">VMware</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">VMware</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#detailed-description-of-vcsa-services">Detailed description of VCSA Services</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">SSG</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Jekyll</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#section-1">Section 1</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-2">Section 2</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-3">Section 3</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../jekyll/">Jekyll</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guides</span></p>
@@ -124,8 +120,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">SSG</li>
-      <li class="breadcrumb-item active">Jekyll</li>
+          <li class="breadcrumb-item">Hosting</li>
+      <li class="breadcrumb-item active">VMware</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -134,17 +130,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="jekyll">Jekyll</h1>
-<p>Some boiler plate text.</p>
-<h2 id="section-1">Section 1</h2>
-<h2 id="section-2">Section 2</h2>
-<h2 id="section-3">Section 3</h2>
+                <h1 id="vmware">VMware</h1>
+<h2 id="detailed-description-of-vcsa-services">Detailed description of VCSA Services</h2>
+<div class="highlight"><pre><span></span><code>vmdnsd (VMware Domain Name Service)
+vmware-vmon (VMware Service Lifecycle Manager)
+vsan-dps (VMware VSAN Data Protection Service)
+vmware-eam (VMware ESX Agent Manager)
+vmafdd (VMware Authentication Framework)
+vmware-sts-idmd (VMware Identity Management Service)
+vsphere-ui (VMware vSphere Client)
+applmgmt (VMware Appliance Management Service)
+vmware-sca (VMware Service Control Agent)
+vmware-vapi-endpoint (VMware vAPI Endpoint)
+vmware-content-library (VMware Content Library Service)
+vmware-vcha (VMware vCenter High Availability)
+vmware-vsm (VMware vService Manager)
+vmware-vsan-health (VMware VSAN Health Service)
+vmware-vpxd (VMware vCenter Server)
+vmware-mbcs (VMware Message Bus Configuration Service)
+vmware-cm (VMware Component Manager)
+vmware-pod (VMware Patching and Host Management Service)
+vmdird (VMware Directory Service)
+vmware-vpostgres (VMware Postgres)
+lwsmd (Likewise Service Manager)
+vmware-rhttpproxy (VMware HTTP Reverse Proxy)
+vmware-statsmonitor (VMware Appliance Monitoring Service)
+vmware-cis-license (VMware License Service)
+vmware-analytics (VMware Analytics Service)
+vmware-netdumper (VMware vSphere ESXi Dump Collector)
+vmcam (VMware vSphere Authentication Proxy)
+pschealth (VMware Platform Services Controller Health Monitor)
+vmonapi (VMware Service Lifecycle Manager API)
+vsphere-client (VMware vSphere Web Client)
+vmware-rbd-watchdog (VMware vSphere Auto Deploy Waiter)
+vmware-vpxd-svcs (VMware vCenter-Services)
+vmware-postgres-archiver (VMware Postgres Archiver)
+vmware-imagebuilder (VMware Image Builder Manager)
+vmware-stsd (VMware Security Token Service)
+vmcad (VMware Certificate Service)
+vmware-perfcharts (VMware Performance Charts)
+vmware-updatemgr (VMware Update Manager)
+vmware-sps (VMware vSphere Profile-Driven Storage Service)
+</code></pre></div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../vmware/" class="btn btn-neutral float-left" title="VMware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../windows/" class="btn btn-neutral float-right" title="Windows">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../cloudways/" class="btn btn-neutral float-left" title="Cloudways"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../jekyll/" class="btn btn-neutral float-right" title="Jekyll">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -168,10 +201,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../vmware/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../cloudways/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../windows/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../jekyll/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

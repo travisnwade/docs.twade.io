@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.twade.io/vmware/</loc>
+         <lastmod>2023-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.twade.io/vultr/</loc>
          <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>

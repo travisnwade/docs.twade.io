@@ -63,9 +63,9 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../jekyll/">Jekyll</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../hugo/">Hugo</a>
+                  <li class="toctree-l1"><a class="" href="../hugo/README.md">Hugo</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../hexo/">Hexo</a>
+                  <li class="toctree-l1"><a class="" href="../hexo/README.md">Hexo</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guides</span></p>
@@ -177,11 +177,11 @@
 <p>The offical page for MKDocs can be found here: <a href="https://www.mkdocs.org/">https://www.mkdocs.org/</a></p>
 <h2 id="mkdocsyml-example">mkdocs.yml Example</h2>
 <p>This is an example of my current <code>mkdocs.yml</code> file for this site:</p>
-<pre class="highlight"><code class="language-yml">site_name: Travis Wade Wiki
+<div class="highlight"><pre><span></span><code>site_name: Travis Wade Wiki
 site_url: https://docs.twade.io
 site_description: A flat-file, stupid simple docs and wiki platform hosted on Netlify and maintained by Travis Wade.
 site_author: Travis Wade
-copyright: © 2023 &lt;a href="https://links.twade.io" target="_blank"&gt;Travis Wade&lt;/a&gt;
+copyright: © 2023 &lt;a href=&quot;https://links.twade.io&quot; target=&quot;_blank&quot;&gt;Travis Wade&lt;/a&gt;
 extra_css:
 - css/custom.css
 extra_javascript:
@@ -207,22 +207,24 @@ nav:
     - MKDocs Help: mkdocs-help/index.md    
     - About: about.md
 - Tools:
-    - 'Online Markdown Editor': https://markdown.twade.io/" target="_blank
-    - 'Markdown Reference Sheet': https://markdown.twade.io/markdown-reference/" target="_blank
+    - &#39;Online Markdown Editor&#39;: https://markdown.twade.io/&quot; target=&quot;_blank
+    - &#39;Markdown Reference Sheet&#39;: https://markdown.twade.io/markdown-reference/&quot; target=&quot;_blank
     - Downloads: downloads/index.md
 - Awesome Extras:
-    - 'Awesome Self Hosted': https://github.com/awesome-selfhosted/awesome-selfhosted#table-of-contents" target="_blank
+    - &#39;Awesome Self Hosted&#39;: https://github.com/awesome-selfhosted/awesome-selfhosted#table-of-contents&quot; target=&quot;_blank
 - More About Travis:
-    - 'Github': https://github.com/travisnwade" target="_blank
-    - 'LinkedIn': https://www.linkedin.com/in/traviswade/" target="_blank
-    - 'Instagram': https://www.instagram.com/tn_wade/" target="_blank
-    - 'Links Page': https://links.twade.io  " target="_blank   </code></pre>
+    - &#39;Github&#39;: https://github.com/travisnwade&quot; target=&quot;_blank
+    - &#39;LinkedIn&#39;: https://www.linkedin.com/in/traviswade/&quot; target=&quot;_blank
+    - &#39;Instagram&#39;: https://www.instagram.com/tn_wade/&quot; target=&quot;_blank
+    - &#39;Links Page&#39;: https://links.twade.io  &quot; target=&quot;_blank   
+</code></pre></div>
 <h2 id="opening-links-in-new-tab">Opening Links in New Tab</h2>
 <h3 id="automatically-open-external-links-in-a-new-tab">Automatically open external links in a new tab</h3>
 <p>This one requires you to create a new folder and new <code>.js</code> file. As well as a slight modification to your <code>mkdocs.yml</code> file.</p>
 <p>First, the new <code>.js</code> file.  You can name it whatever you like, I just named mine <code>custom.js</code>.</p>
 <p>Place the following line of code as the content of your new <code>.js</code> file that will handle this action:</p>
-<pre class="highlight"><code class="language-javascript">!function(){for(var e=document.body.getElementsByTagName("a"),t=e.length,n=0;n&lt;t;n++)new URL(e[n].href).origin!==location.origin&amp;&amp;e[n].setAttribute("target","_blank")}();</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="kd">function</span><span class="p">(){</span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">e</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">),</span><span class="nx">t</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="nx">n</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="nx">n</span><span class="o">&lt;</span><span class="nx">t</span><span class="p">;</span><span class="nx">n</span><span class="o">++</span><span class="p">)</span><span class="ow">new</span><span class="w"> </span><span class="nx">URL</span><span class="p">(</span><span class="nx">e</span><span class="p">[</span><span class="nx">n</span><span class="p">].</span><span class="nx">href</span><span class="p">).</span><span class="nx">origin</span><span class="o">!==</span><span class="nx">location</span><span class="p">.</span><span class="nx">origin</span><span class="o">&amp;&amp;</span><span class="nx">e</span><span class="p">[</span><span class="nx">n</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">,</span><span class="s2">&quot;_blank&quot;</span><span class="p">)}();</span>
+</code></pre></div>
 <p>I placed this in a new folder under the <code>docs</code> directory.  Like such:</p>
 <pre><code>docs
 -- js
@@ -246,12 +248,13 @@ nav:
 <h2 id="footnotes">Footnotes</h2>
 <p>This is an example of a footnote<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </p>
 <p>Here's how the footnote is written in Markdown:</p>
-<pre class="highlight"><code class="language-markdown">This is an example of a footnote[^1] 
+<div class="highlight"><pre><span></span><code>This is an example of a footnote[^1] 
 
-[^1]: 
-    This is the description of the footnote itself. 
+[<span class="nl">^1</span>]: 
+    <span class="na">This is the description of the footnote itself. </span>
     Which should render at the bottom of the page. 
-    For more reading, read here: [python-markdown-extension-footnotes](https://python-markdown.github.io/extensions/footnotes/)</code></pre>
+    For more reading, read here: [<span class="nt">python-markdown-extension-footnotes</span>](<span class="na">https://python-markdown.github.io/extensions/footnotes/</span>)
+</code></pre></div>
 <h2 id="buttons">Buttons</h2>
 <h3 id="primary-buttons">Primary Buttons</h3>
 <p><a class="md-button md-button--primary" href="#">Subscribe to our newsletter</a></p>
@@ -371,15 +374,17 @@ within the note.</p>
 <h2 id="fenced-code">Fenced Code</h2>
 <p>This is especially handy when you want the correct syntax when highlighting code.</p>
 <h3 id="html">HTML</h3>
-<pre class="highlight"><code class="language-html">&lt;a href="#"&gt;A link&lt;/a&gt;
-&lt;p&gt;Should render as html code here.&lt;/p&gt;</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>A link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Should render as html code here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
 <pre><code>``` { .html }
 &lt;a href="#"&gt;A link&lt;/a&gt;
 &lt;p&gt;Should render as html code here.&lt;/p&gt;
 ```
 </code></pre>
 <h3 id="powershell">PowerShell</h3>
-<pre class="highlight"><code class="language-powershell">Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">Win32_OperatingSystem</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">Shutdown</span>
+</code></pre></div>
 <pre><code>``` { .powershell }
 Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
 ```
